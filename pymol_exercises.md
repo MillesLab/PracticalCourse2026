@@ -6,32 +6,51 @@ introduced in the PyMOL teaching guide.
 Each task should be completed using PyMOL commands rather than the
 graphical menus whenever possible.
 
-Structure recommended for the exercises:
+We are using the structure we want to redesign during this practical
+course. First find basic facts about the protein in UniProt.
 
-Ubiquitin (PDB ID: 1UBQ)
+https://www.uniprot.org/uniprotkb/P02976/entry
 
-Load the structure:
+### Exercise --- Note some basic facts about Protein A
 
-    fetch 1ubq
+Note some facts about the protein from UniProt.
 
-------------------------------------------------------------------------
+Record at least:
 
-# Exercise 1 --- Basic Visualization
+-   Organism
+-   Protein length
+-   Cellular location
+-   Function
+-   Any structural notes mentioned in the annotation
 
-1.  Load the structure 1UBQ.
+### Exercise --- Basic Visualization
+
+1.  Load the structure from the folder `input_pdbs`. For redesign we are
+    using the AlphaFold structure: `AF-P02976-F1-model_v6.pdb`. For now
+    we use the file from the PDB: `1BDD`.
 2.  Hide all default representations.
 3.  Display the protein as a cartoon representation.
-4.  Set the background color to white.
+4.  Show and hide the surface.
+5.  Show and hide residues.
+6.  Explore the structure: center at different positions, translate,
+    rotate, and zoom.
 
 Commands that may be useful:
 
-    hide everything
-    show cartoon
-    bg_color white
+```
+hide everything
+show cartoon
+show lines
+show surface
+```
+
+Notice the alpha‑helical structure of Protein A. In the next section, we
+will take one of these helices and graft it onto a newly designed
+backbone.
 
 ------------------------------------------------------------------------
 
-# Exercise 2 --- Coloring Chains
+### Exercise --- Coloring Chains
 
 1.  Identify whether the structure contains multiple chains.
 2.  Color each chain with a different color.
@@ -39,11 +58,13 @@ Commands that may be useful:
 
 Example command:
 
-    color red, chain A
+```
+color red, chain A
+```
 
 ------------------------------------------------------------------------
 
-# Exercise 3 --- Selecting Residues
+### Exercise --- Selecting Residues
 
 1.  Select residues 10--20.
 2.  Display these residues as sticks.
@@ -51,13 +72,15 @@ Example command:
 
 Suggested commands:
 
-    select region, resi 10-20
-    show sticks, region
-    color yellow, region
+```
+select region, resi 10-20
+show sticks, region
+color yellow, region
+```
 
 ------------------------------------------------------------------------
 
-# Exercise 4 --- Distance Measurement
+### Exercise --- Distance Measurement
 
 Measure the distance between:
 
@@ -66,13 +89,15 @@ Measure the distance between:
 
 Example syntax:
 
-    distance resi10/CA, resi50/CA
+```
+distance resi10/CA, resi50/CA
+```
 
 Observe the measured distance displayed in the viewer.
 
 ------------------------------------------------------------------------
 
-# Exercise 5 --- Surface Visualization
+### Exercise --- Surface Visualization
 
 1.  Display the protein surface.
 2.  Set the transparency to 0.4.
@@ -80,32 +105,42 @@ Observe the measured distance displayed in the viewer.
 
 Commands:
 
-    show surface
-    set transparency, 0.4
+```
+show surface
+set transparency, 0.4
+```
 
 ------------------------------------------------------------------------
 
-# Exercise 6 --- Ligand Identification (General Task)
+### Exercise --- Ligand Identification (General Task)
 
 Load a protein structure that contains a ligand (for example a PDB entry
-from the Protein Data Bank).
+from the Protein Data Bank). For example:
+
+```
+1AI9
+```
 
 Tasks:
 
-1.  Identify the ligand.
-2.  Display it as sticks.
-3.  Highlight nearby residues within 4 Å.
+1.  Remove water for convenience.
+2.  Identify the ligand.
+3.  Display it as sticks.
+4.  Highlight nearby residues within 4 Å.
 
 Commands that may help:
 
-    select ligand, organic
-    show sticks, ligand
-    select pocket, byres ligand around 4
-    show sticks, pocket
+```
+remove sol
+select ligand, organic
+select ligand, not polymer.protein
+select pocket, byres ligand around 4
+show sticks, pocket
+```
 
 ------------------------------------------------------------------------
 
-# Exercise 7 --- Publication Image
+### Exercise --- Publication Image
 
 Create a publication-quality image:
 
@@ -117,12 +152,71 @@ Create a publication-quality image:
 
 Example commands:
 
-    ray 2000,2000
-    png structure.png, dpi=300
+```
+ray 2000,2000
+png structure.png, dpi=300
+```
 
 ------------------------------------------------------------------------
 
-# Optional Exploration
+### Exercise --- Selecting a Helix (More Advanced)
+
+Protein A consists primarily of alpha helices. Select one helix and
+display it separately.
+
+Tasks:
+
+1.  Identify one helix visually.
+2.  Select the residues belonging to that helix.
+3.  Display only that helix as sticks or cartoon.
+4.  Color the helix differently from the rest of the protein.
+
+Hint:
+
+Use residue ranges when creating selections.
+
+Example:
+
+```
+select helix1, resi 20-35
+show sticks, helix1
+color red, helix1
+```
+
+You can also hide everything except the helix to inspect it more
+clearly.
+
+------------------------------------------------------------------------
+
+### Exercise --- Finding Neighbouring Residues (More Advanced)
+
+Often we want to know which residues interact with a specific region or
+residue.
+
+Tasks:
+
+1.  Choose one residue (for example residue 25).
+2.  Identify residues within 5 Å of this residue.
+3.  Display those residues as sticks.
+4.  Color them differently from the rest of the protein.
+
+Hint:
+
+PyMOL has powerful selection expressions using the keyword `around`.
+
+Example:
+
+```
+select neighbors, resi 25 around 5
+show sticks, neighbors
+color orange, neighbors
+```
+
+Try visualizing how residues pack around each other in the helix bundle.
+
+------------------------------------------------------------------------
+
+### Optional Exploration
 
 Consult the PyMOL Wiki for additional commands and examples:
 
