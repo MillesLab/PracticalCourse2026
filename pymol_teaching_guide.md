@@ -214,3 +214,6 @@ Essential PyMOL skills include:
 Further reference and advanced usage examples can be found at:
 
 https://pymolwiki.org/Main_Page
+
+### Exercises 
+Find the exercises here: https://github.com/MillesLab/PracticalCourse2026/blob/main/pymol_exercises.md
