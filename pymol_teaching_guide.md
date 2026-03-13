@@ -14,7 +14,7 @@ to begin working productively with PyMOL.
 
 ------------------------------------------------------------------------
 
-# 1. Loading Molecular Structures
+### 1. Loading Molecular Structures
 
 PyMOL commonly works with structures from the Protein Data Bank (PDB).
 
@@ -30,7 +30,7 @@ The fetched structure will appear in the viewer immediately.
 
 ------------------------------------------------------------------------
 
-# 2. Navigation
+### 2. Navigation
 
 Mouse controls:
 
@@ -50,7 +50,7 @@ Center the view on a structure:
 
 ------------------------------------------------------------------------
 
-# 3. Molecular Representations
+### 3. Molecular Representations
 
 Different graphical representations highlight different structural
 aspects.
@@ -83,7 +83,7 @@ Surface representation:
 
 ------------------------------------------------------------------------
 
-# 4. Coloring Structures
+### 4. Coloring Structures
 
 Color the entire object:
 
@@ -100,7 +100,7 @@ Color atoms according to element; in blue for example:
 
 ------------------------------------------------------------------------
 
-# 5. Selections
+### 5. Selections
 
 Selections allow specific atoms or residues to be manipulated.
 
@@ -127,7 +127,7 @@ Example:
 
 ------------------------------------------------------------------------
 
-# 6. Measuring Distances
+### 6. Measuring Distances
 
 Distance between two atoms:
 
@@ -143,7 +143,7 @@ Delete a measurement:
 
 ------------------------------------------------------------------------
 
-# 7. Working with Ligands
+### 7. Working with Ligands
 
 Select organic molecules:
 
@@ -160,7 +160,7 @@ Display residues near the ligand:
 
 ------------------------------------------------------------------------
 
-# 8. Surfaces and Transparency
+### 8. Surfaces and Transparency
 
 Display protein surface:
 
@@ -172,7 +172,7 @@ Adjust transparency:
 
 ------------------------------------------------------------------------
 
-# 9. Producing Figures
+### 9. Producing Figures
 
 Set background color:
 
@@ -188,7 +188,7 @@ Save image:
 
 ------------------------------------------------------------------------
 
-# 10. Saving Sessions
+### 10. Saving Sessions
 
 Save work:
 
@@ -200,7 +200,7 @@ Load session later:
 
 ------------------------------------------------------------------------
 
-# Summary
+### Summary
 
 Essential PyMOL skills include:
 
